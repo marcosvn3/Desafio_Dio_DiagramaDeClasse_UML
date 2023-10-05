@@ -4,20 +4,25 @@ import Interfaces.AparelhoTelefonico;
 import Interfaces.NavegadorInternet;
 import Interfaces.ReprodutorMusical;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Iphone implements AparelhoTelefonico, ReprodutorMusical, NavegadorInternet {
-    private String musica;
-    private String contato;
+    private List<Musica>musicas;
+    private List<Contato>agenda;
     private Boolean internet;
 
-    public Iphone(String musica, String contato, Boolean internet) {
-        this.musica = musica;
-        this.contato = contato;
+    public Iphone( Boolean internet) {
+        this.musicas = new ArrayList<>();
+        this.agenda = new ArrayList<>();
         this.internet = internet;
     }
 
+
+
     @Override
     public void tocar() {
-        System.out.println("Tocando musica: " + this.musica);
+        System.out.println("Tocando musica: " );
     }
 
     @Override
